@@ -10,5 +10,6 @@
 ## Todo
   - solve the problem that if epochs are over 200, then the action is converged in wrong direction.
   - more games have to be tested.
- 
+  - parser
+  
 ### Plot
