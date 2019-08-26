@@ -13,3 +13,7 @@
   - parser
   
 ### Plot
+#### MountainCarContinuous-v0
+![img](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincar.png)
+ - As epochs over 200, all(train and test) models are diverged.
+  * i tried to adjust batch size, learning-rate, activation function, model size, noise size but it is not cleared.
