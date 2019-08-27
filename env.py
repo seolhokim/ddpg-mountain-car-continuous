@@ -3,6 +3,7 @@ import gym
 from ounoise import OUNoise
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
 action_size = 1
 exploration_mu = 0
@@ -28,10 +29,11 @@ def compute_discounted_R(record,discounted_rate = 0.999):
         record[i][2] = reward_list[i]
     return record
 
-def run_process(iteration, double_mode = False, train = True, render = False, train_batch_size = 128,verbose = False,reward_normalization = False):
-    save_point = 1
+def run_process(iteration, double_mode = False, train = True, render = False,\
+                train_batch_size = 128,verbose = False,reward_normalization = False,save_point = 10):
+    save_point = save_point
     if train : 
-        save_point = iteration // 10
+        save_point = iteration // save_point
     for iterate in range(iteration):
         if train & (iterate % save_point == 0):
             print('saved')
@@ -93,20 +95,26 @@ def main():
     parser.add_argument('--b', type=int, default=128, help='train batch size. (default : 128)')
     parser.add_argument('--v', type=bool, default=False, help='verbose mode. (default : False)')
     parser.add_argument('--n', type=bool, default=True, help='reward normalization. (default : True)')
-    
+    parser.add_argument('--sp', type=int, default=True, help='save point. epochs // sp. (default : 100)')
+
     args = parser.parse_args()
-    configuration(args.e,args.b,args.epochs,args.d,args.t,args.r,args.v.args.n)
+    configuration(args.e,args.b,args.epochs,args.d,args.t,args.r,args.v,args.n,args.sp)
     
-def configuration(environment,batch_size,epochs,double_mode,train,render,verbose,reward_normalization):
+def configuration(environment,batch_size,epochs,double_mode,train,render,verbose,reward_normalization,save_point):
+    global agent
+    global env
+    global episode_reward_lst
+    global test_episode_reward_lst
     env = gym.make(environment)
     episode_reward_lst = []
     test_episode_reward_lst = []
     agent = Agent(env.observation_space.shape[0],env.action_space.shape[0],train_batch_size = batch_size)
+    
     agent.main_actor.model.summary()
     agent.main_critic.model.summary()
 
     run_process(epochs,double_mode=double_mode, train=train,render = render, train_batch_size=batch_size,\
-                verbose = verbose,reward_normalization=reward_normalization)
+                verbose = verbose,reward_normalization=reward_normalization,save_point = save_point)
 
-def __name__== '__main__':
+if __name__ == '__main__':
     main()
