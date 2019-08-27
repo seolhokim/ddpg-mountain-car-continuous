@@ -32,18 +32,19 @@ def compute_discounted_R(record,discounted_rate = 0.999):
 def run_process(iteration, double_mode = False, train = True, render = False,\
                 train_batch_size = 128,verbose = False,reward_normalization = False,save_point = 10):
     for iterate in range(iteration):
-        if train & (iterate+1 % save_point == 0):
-            print('saved')
-            agent.main_critic.model.save_weights("./well_trained_main_critic_"+str(iterate)+".h5")
-            agent.target_critic.model.save_weights("./well_trained_target_critic_"+str(iterate)+".h5")
-            agent.main_actor.model.save_weights("./well_trained_main_actor_"+str(iterate)+".h5") 
-            agent.target_actor.model.save_weights("./well_trained_target_actor_"+str(iterate)+".h5")
         print('iterate : ',iterate)
         if double_mode :
             run_episode(train,render, train_batch_size, verbose, reward_normalization)
             run_episode(False,render, train_batch_size, verbose, reward_normalization)
         else:
             run_episode(train,render,train_batch_size,verbose,reward_normalization)
+
+        if train & ((iterate+1) % save_point == 0):
+            agent.main_critic.model.save_weights("./well_trained_main_critic_"+str(iterate)+".h5")
+            agent.target_critic.model.save_weights("./well_trained_target_critic_"+str(iterate)+".h5")
+            agent.main_actor.model.save_weights("./well_trained_main_actor_"+str(iterate)+".h5") 
+            agent.target_actor.model.save_weights("./well_trained_target_actor_"+str(iterate)+".h5")
+            print('saved')
 
 def run_episode(train = True, render = False, train_batch_size = 128,verbose = False,reward_normalization = False):
     record = []
