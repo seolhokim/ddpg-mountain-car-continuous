@@ -40,10 +40,10 @@ def run_process(iteration, double_mode = False, train = True, render = False,\
             run_episode(train,render,train_batch_size,verbose,reward_normalization)
 
         if train & ((iterate+1) % save_point == 0):
-            agent.main_critic.model.save_weights("./well_trained_main_critic_"+str(iterate)+".h5")
-            agent.target_critic.model.save_weights("./well_trained_target_critic_"+str(iterate)+".h5")
-            agent.main_actor.model.save_weights("./well_trained_main_actor_"+str(iterate)+".h5") 
-            agent.target_actor.model.save_weights("./well_trained_target_actor_"+str(iterate)+".h5")
+            agent.main_critic.model.save_weights("./well_trained_main_critic_"+str(iterate+1)+".h5")
+            agent.target_critic.model.save_weights("./well_trained_target_critic_"+str(iterate+1)+".h5")
+            agent.main_actor.model.save_weights("./well_trained_main_actor_"+str(iterate+1)+".h5") 
+            agent.target_actor.model.save_weights("./well_trained_target_actor_"+str(iterate+1)+".h5")
             print('saved')
 
 def run_episode(train = True, render = False, train_batch_size = 128,verbose = False,reward_normalization = False):
