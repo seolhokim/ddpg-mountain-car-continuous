@@ -60,7 +60,7 @@ def run_episode(train = True, render = False, train_batch_size = 128,verbose = F
 
         action = agent.get_action(state)
         if train : 
-            action = np.clip((action +(noise.sample())), -1, 1)
+            action = np.clip((action +(noise.sample())), -1, 1) * 2
         else :
             action = np.clip(action, -1,1)
         next_frame, reward, done, _ = env.step(action)
@@ -74,7 +74,7 @@ def run_episode(train = True, render = False, train_batch_size = 128,verbose = F
             if reward_normalization : 
                 record = compute_discounted_R(record)
             list(map(lambda x : agent.memory.add(x[0],x[1],x[2],x[3],x[4]), record))
-        if (len(agent.memory)>10000)& train:
+        if (len(agent.memory)>train_batch_size * 10)& train:
             print('trained_start')
             agent.train()
             print('trained_well')

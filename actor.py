@@ -18,9 +18,9 @@ class Actor:
     def __make_model(self):
         input_layer = layers.Input(shape=(self.input_dim,))
         x = layers.BatchNormalization()(input_layer)
-        x = layers.Dense(32,activation = 'relu')(x)
-        x = layers.Dense(32,activation = 'relu')(x)
-        x = layers.Dense(32,activation = 'relu')(x)
+        x = layers.Dense(128,activation = 'relu')(x)
+        x = layers.Dense(256,activation = 'relu')(x)
+        x = layers.Dense(128,activation = 'relu')(x)
         x = layers.Dense(self.output_dim,activation = 'tanh')(x)
         
         model = Model(inputs = input_layer, outputs = x)
@@ -31,8 +31,6 @@ class Actor:
                                   name = 'q_gradient_placeholder')
         
         loss =  tf.gradients(self.model.output,self.model.trainable_weights, -q_gradient) #grad_ys임 값 고정위해
-        
-        #loss = -K.mean(a_gradient_when_q)
         
         optimizer = optimizers.Adam(lr=0.0001)
         updates = optimizer.get_updates(loss = loss, params = self.model.trainable_weights)

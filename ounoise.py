@@ -6,6 +6,8 @@ class OUNoise:
 
     def __init__(self, size, mu, theta, sigma):
         """Initialize parameters and noise process."""
+        self.epsilon = 0.9
+        self.epsion_decaying = 0.99995
         self.mu = mu * np.ones(size)
         self.theta = theta
         self.sigma = sigma
@@ -20,4 +22,6 @@ class OUNoise:
         x = self.state
         dx = self.theta * (self.mu - x) + self.sigma * np.random.randn(len(x))
         self.state = x + dx
-        return self.state
+        self.epsilon = self.epsilon * self.epsion_decaying
+        
+        return self.state * self.epsilon
