@@ -21,14 +21,15 @@ class Critic:
         state_input_layer = layers.Input(shape=(self.input_dim,))
         action_input_layer = layers.Input(shape=(self.output_dim,))
         
-        state_x = layers.BatchNormalization()(state_input_layer)
-        action_x = layers.BatchNormalization()(action_input_layer)
+        #state_x = layers.BatchNormalization()(state_input_layer)
+        #action_x = layers.BatchNormalization()(action_input_layer)
         
-        state_x = layers.Dense(32,activation = 'relu')(state_x)
-        action_x = layers.Dense(8,activation = 'relu')(action_x)
+        state_x = layers.Dense(128,activation = 'relu')(state_input_layer)
+        state_x = layers.Dense(256,activation = 'relu')(state_x)
+        action_x = layers.Dense(128,activation = 'relu')(action_input_layer)
         
         x = layers.Concatenate()([state_x,action_x])
-        x = layers.Dense(32,activation = 'relu')(x)
+        x = layers.Dense(128,activation = 'relu')(x)
         x = layers.Dense(1,activation = 'linear')(x)
         
         model = Model(inputs = [state_input_layer,action_input_layer], outputs = x)
