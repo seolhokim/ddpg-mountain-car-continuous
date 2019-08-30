@@ -28,7 +28,7 @@
  - As epochs over 200, all(train and test) models are diverged.
    * i tried to adjust batch size, learning-rate, activation function, model size, noise size but it is not cleared.
 ##### 2019.08.30
-![img](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincar_08_30.png)
+![img](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincar_08_30.PNG)
   - it doesn't converged at all.
     * i tried almost same model maded by another people, it looks same i guess ![here](https://github.com/piotrplata/keras-ddpg), but 
       it looks converged. but my model didn't converged.
