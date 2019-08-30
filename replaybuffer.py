@@ -11,8 +11,6 @@ class ReplayBuffer():
         self.memory.append(e)
         
     def sample(self):
-        #random.shuffle(self.memory)
-        #return [self.memory.popleft() for x in range(self.batch_size)]
         return random.sample(self.memory, self.batch_size)
         
     

@@ -27,7 +27,7 @@ class Critic:
         state_x = layers.Dense(32,activation = 'relu')(state_x)
         action_x = layers.Dense(8,activation = 'relu')(action_x)
         
-        x = layers.concatenate([state_x,action_x])
+        x = layers.Concatenate()([state_x,action_x])
         x = layers.Dense(32,activation = 'relu')(x)
         x = layers.Dense(1,activation = 'linear')(x)
         
