@@ -43,12 +43,12 @@ python main.py
 Options:
 - '--epochs', type=int, default=100, help='number of epochs, (default: 100)'
 - '--e', type=str, default='MountainCarContinuous-v0', help='environment name, (default: MountainCarContinuous-v0)'
-- '--d', type=bool, default=False, help='train and test alternately. (default : False)'
+#- '--d', type=bool, default=False, help='train and test alternately. (default : False)'
 - '--t', type=bool, default=True, help="True if training, False if test. (default: True)"
 - '--r', type=bool, default=False, help='rendering the game environment. (default : False)'
 - '--b', type=int, default=128, help='train batch size. (default : 128)'
 - '--v', type=bool, default=False, help='verbose mode. (default : False)'
-- '--n', type=bool, default=True, help='reward normalization. (default : True)'
+#- '--n', type=bool, default=True, help='reward normalization. (default : True)'
 - '--sp', type=int, default=True, help='save point. epochs // sp. (default : 100)'
 
 ## Reference
