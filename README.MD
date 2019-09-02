@@ -2,13 +2,10 @@
 - Implement DDPG ( Deep Deterministic Policy Gradient)
 
 
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG" width="200" height="200"></left>
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG" width="200" height="200"></left>
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG" width="200" height="200"></left>
-![pendulum](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG width="100" height="100")
-![3dball](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG width="100" height="100")
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG" width="300" height="200"></left>
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG" width="300" height="200"></left>
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG" width="300" height="200"></left>
 
-![mountaincarcontinuous](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG width="100" height="100")
 ## Experiments
 
 | Game | Epochs | Training Time | Model Parameters |
