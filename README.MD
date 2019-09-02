@@ -33,6 +33,10 @@
   - it doesn't converged at all.
     * i tried almost same model maded by another people, it looks same i guess ![here](https://github.com/piotrplata/keras-ddpg), but 
       it looks converged. but my model didn't converged.
+##### 2019.08.30
+![img](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincar_09_02.PNG)
+  - i changed the training rate in Critic model at 0.001 to 0.0001(i have tried some points.)
+     * it shows that model can be trained well by adjusting the learning rate. i gain the idea from TRPO and PPO that the change of model of parameters is handled carefully.
   
 ## Run
 
