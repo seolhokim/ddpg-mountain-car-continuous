@@ -21,12 +21,12 @@ class Critic:
         state_input_layer = layers.Input(shape=(self.input_dim,))
         action_input_layer = layers.Input(shape=(self.output_dim,))
         
-        #state_x = layers.BatchNormalization()(state_input_layer)
-        #action_x = layers.BatchNormalization()(action_input_layer)
+        state_x = layers.BatchNormalization()(state_input_layer)
+        action_x = layers.BatchNormalization()(action_input_layer)
         
-        state_x = layers.Dense(128,activation = 'relu')(state_input_layer)
+        state_x = layers.Dense(128,activation = 'relu')(state_x)
         state_x = layers.Dense(256,activation = 'relu')(state_x)
-        action_x = layers.Dense(128,activation = 'relu')(action_input_layer)
+        action_x = layers.Dense(128,activation = 'relu')(action_x)
         
         x = layers.Concatenate()([state_x,action_x])
         x = layers.Dense(128,activation = 'relu')(x)
@@ -42,7 +42,7 @@ class Critic:
         
         critic_loss = K.mean(K.square(reward_placeholder - critic_output)) 
         
-        critic_optimizer = optimizers.Adam(lr = 0.001)
+        critic_optimizer = optimizers.Adam(lr = 0.0001)
         critic_updates = critic_optimizer.get_updates(params = self.model.trainable_weights,\
                                                      loss = critic_loss)
         self.update_function = K.function(inputs = [self.model.input[0],\

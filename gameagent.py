@@ -16,8 +16,8 @@ class Agent:
         self.main_actor = Actor(input_dim,output_dim,tau,gamma)
         self.target_actor = Actor(input_dim,output_dim,tau,gamma)
     
-        #self.target_critic.model.set_weights(self.main_critic.model.get_weights())
-        #self.target_actor.model.set_weights(self.main_actor.model.get_weights())
+        self.target_critic.model.set_weights(self.main_critic.model.get_weights())
+        self.target_actor.model.set_weights(self.main_actor.model.get_weights())
         
         self.memory = ReplayBuffer(batch_size = train_batch_size)
 
