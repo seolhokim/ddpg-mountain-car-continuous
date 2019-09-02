@@ -2,7 +2,7 @@
 - Implement DDPG ( Deep Deterministic Policy Gradient)
 
 ![3dball](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG width="100" height="100")
-
+<img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG" width="300" height="300">
 ![mountaincarcontinuous](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG width="100" height="100")
 
 ![pendulum](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG width="100" height="100")
