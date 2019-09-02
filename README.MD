@@ -1,6 +1,8 @@
 # Continuous control with deep reinforcement learning
 - Implement DDPG ( Deep Deterministic Policy Gradient)
-
+![3dball](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3DBall.PNG)
+![mountaincarcontinuous](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG)
+![pendulum](https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG)
 ## Experiments
 
 | Game | Epochs | Training Time | Model Parameters |
