@@ -2,9 +2,9 @@
 - Implement DDPG ( Deep Deterministic Policy Gradient)
 
 
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG" width="300" height="200"></left>
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG" width="300" height="200"></left>
-<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG" width="300" height="200"></left>
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/3dball.PNG" width="250" height="200"></left>
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/mountaincarcontinuous.PNG" width="250" height="200"></left>
+<left><img src="https://github.com/seolhokim/ddpg_mountaincar_keras/blob/master/asset/pendulum.PNG" width="250" height="200"></left>
 
 ## Experiments
 
