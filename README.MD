@@ -5,8 +5,9 @@
 
 | Game | Epochs | Training Time | Model Parameters |
 | :---: | :---: | :---: | :---: |
-| MountainCarContinuous-v0 | 1000 | 30 min | 7,486(total)
+| MountainCarContinuous-v0 | 1000 | 30 min | 299,032(total)
 | Pendulum-v0 | 1000 | 30 min | 299,536(total)
+| 3DBall | willbeupdated | willbeupdated | willbeupdated
 
 ## Todo
   - solve the problem that if epochs are over 200, then the action is converged in wrong direction.
