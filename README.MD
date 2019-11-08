@@ -1,4 +1,5 @@
 # Continuous control with deep reinforcement learning
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/seolhokim/mountain-car-continuous-reinforcement-learning)
 - Implement DDPG ( Deep Deterministic Policy Gradient)
 
 
